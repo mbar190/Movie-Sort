@@ -180,9 +180,11 @@ main {
   margin-left: 8px;
 }
 
-.movies-grid {
+movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: none;
   gap: 20px;
   max-width: 1200px;
   justify-content: center;
