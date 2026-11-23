@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simplified Movies API ref</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img
+          src="./assets/fes-logo.png"
+          alt=""
+          class="logo__img"
+          width="50px"
+        />
+        <div class="logo__title"><span>Simplified</span> Flix</div>
+      </div>
+      <form class="search-form" id="searchForm">
+        <div class="search-form__group">
+          <input
+            class="search-form__input"
+            type="text"
+            id="searchInput"
+            placeholder="Search movies..."
+            required
+          />
+          <!-- no need for button with an onClick because it's part of a form with a type="submit" below  -->
+          <button class="search-form__button" type="submit" aria-label="Search">
+            <svg
+              class="search-form__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </nav>
+
+    <main>
+      <div class="controls">
+        <p id="resultsInfo" class="resultsInfo">
+          <span>Showing: </span>Action Movies
+        </p>
+        <div>
+          <label for="sortSelect">Sort:</label>
+          <select id="sortSelect">
+            <option value="default">Default</option>
+            <option value="a-z">A - Z</option>
+            <option value="z-a">Z - A</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="movies-grid" id="moviesGrid">
+        <!-- this is where the search results are displayed -->
+        <!-- replace the hardcoded values below with dynamic data from your API.  Hint: use .map inside your javascript file (i.e. script.js)-->
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BNGE0YTVjNzUtNzJjOS00NGNlLTgxMzctZTY4YTE1Y2Y1ZTU4XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">The Avengers</h2>
+          <p class="movie-card__year">2012</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BMWEyNDM2ZmQtMmFkNi00MTQ1LTk1MjItMzdlZGJlYmIyYzZlXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">Avengers: Endgame</h2>
+          <p class="movie-card__year">2019</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">Avengers: Infinity War</h2>
+          <p class="movie-card__year">2018</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BODBhYTg1NGQtNGVmNS00ZTdiLThjYTYtZDFkNzRiNTZmNDZjXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">Avengers: Age of Ultron</h2>
+          <p class="movie-card__year">2015</p>
+        </div>
+
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BODVhNGIxOGItYWNlMi00YTA0LWI3NTctZmQxZGUwZDEyZWI4XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">
+            Star Wars: Episode I - The Phantom Menace
+          </h2>
+          <p class="movie-card__year">1999</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BNTgxMjY2YzUtZmVmNC00YjAwLWJlODMtNDBhNzllNzIzMjgxXkEyXkFqcGc@._V1_QL75_UX380_CR0,7,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">
+            Star Wars: Episode II - Attack of the Clones
+          </h2>
+          <p class="movie-card__year">2002</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_QL75_UY562_CR21,0,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">
+            Star Wars: Episode III - Revenge of the Sith
+          </h2>
+          <p class="movie-card__year">2005</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_QL75_UX380_CR0,9,380,562_.jpg"
+            alt=""
+          />
+
+          <h2 class="movie-card__title">Star Wars: Episode IV - A New Hope</h2>
+          <p class="movie-card__year">1977</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BMTkxNGFlNDktZmJkNC00MDdhLTg0MTEtZjZiYWI3MGE5NWIwXkEyXkFqcGc@._V1_QL75_UX380_CR0,15,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">
+            Star Wars: Episode V - The Empire Strikes Back
+          </h2>
+          <p class="movie-card__year">1980</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BNWEwOTI0MmUtMGNmNy00ODViLTlkZDQtZTg1YmQ3MDgyNTUzXkEyXkFqcGc@._V1_QL75_UX380_CR0,13,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">
+            Star Wars: Episode VI - Return of the Jedi
+          </h2>
+          <p class="movie-card__year">1983</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_QL75_UY562_CR1,0,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">
+            Star Wars: Episode VII - The Force Awakens
+          </h2>
+          <p class="movie-card__year">2015</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">
+            Star Wars: Episode VIII - The Last Jedi
+          </h2>
+          <p class="movie-card__year">2017</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/I/81SZrTCTb-L._AC_SY300_SX300_QL70_FMwebp_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">
+            Star Wars: Episode IX - The Rise of Skywalker
+          </h2>
+          <p class="movie-card__year">2019</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BMjEwMzMxODIzOV5BMl5BanBnXkFtZTgwNzg3OTAzMDI@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">Rogue One: A Star Wars Story</h2>
+          <p class="movie-card__year">2016</p>
+        </div>
+        <div class="movie-card">
+          <img
+            class="movie-card__img"
+            src="https://m.media-amazon.com/images/M/MV5BOTM2NTI3NTc3Nl5BMl5BanBnXkFtZTgwNzM1OTQyNTM@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+            alt=""
+          />
+          <h2 class="movie-card__title">Solo: A Star Wars Story</h2>
+          <p class="movie-card__year">2018</p>
+        </div>
+
+        <!-- replace the hardcoded values above with dynamic data from your API.  Hint: use .map -->
+      </div>
+    </main>
+
+    <footer>
+      <p>Created by Simplified.org. Powered by OMDBapi.</p>
+    </footer>
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>
